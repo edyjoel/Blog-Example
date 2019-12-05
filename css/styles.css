@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/email-pattern.png");
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #230A59;
+    font-family: Helvetica, serif;
+    font-size: 48px;
+    line-height: 54px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #230A59;
+    text-decoration: none;
+    font-family: Helvetica, serif;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px;
+    transition: .4s;
+
+}
+
+nav a:hover {
+    color: #0029FA;
+    transform: scale(1.2);
+}
+
+.ultimas {
+    color: #230A59 !important;
+    font-family: Helvetica, serif;
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+article a {
+    text-decoration: none;
+}
+
+article h3 {
+    color: #0029FA;
+    font-family: Helvetica, serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+article p {
+    color: #333333;
+    font-family: Helvetica, serif;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+section h2 {
+    color: #230A59;
+    font-family: Helvetica, serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-family: Helvetica, serif;
+    color: #5C73F2;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 6px;
+}
+
+input {
+    display: block;
+    font-family: Helvetica, serif;
+    color: #230A59;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3E38F2;
+    width: 100%;
+}
+
+input[type='submit'] {
+    background: #230A59;
+    color: white;
+    font-family: Helvetica, serif;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+
+main .container section {
+    width: 60%;
+    padding: 20px;
+    float: left;
+}
+
+main .container aside {
+    width: 40%;
+    float: left;
+}
+
+main .container aside section {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    clear: both;
+    background: #230A59;
+    margin-top: 40px;
+}
+
+footer h2 {
+
+    font-family: Helvetica, serif;
+    color: #5C73F2;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+}
+
+@media screen and ( max-width: 600px ) {
+    main .container section {
+        width: 100%;
+        padding: 20px;
+        float: left;
+    }
+
+    main .container aside {
+        width: 100%;
+        float: left;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    article p {
+        text-align: justify;
+    }
+}
