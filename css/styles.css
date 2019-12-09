@@ -113,6 +113,19 @@ input[type='submit'] {
     margin-bottom: 0;
 }
 
+.all {
+    background: #230A59;
+    color: white;
+    font-family: Helvetica, serif;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 0;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
 
 main .container section {
     width: 60%;
