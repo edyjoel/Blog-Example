@@ -158,6 +158,25 @@ footer h2 {
     text-align: center;
 }
 
+.alert {
+    padding: 10px 5px;
+    font-family: Helvetica, serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.alert-unsuccessfully, .alert-error {
+    background: #dc3545;
+    color: white;
+}
+
+.alert-successfully {
+    color: white;
+    background: #28a745;
+}
+
 @media screen and ( max-width: 600px ) {
     main .container section {
         width: 100%;

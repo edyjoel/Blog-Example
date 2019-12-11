@@ -1,8 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="edy">
     <words>
+      <w>curdate</w>
+      <w>firsname</w>
       <w>firstname</w>
       <w>lastname</w>
+      <w>usuarios</w>
     </words>
   </dictionary>
 </component>
