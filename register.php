@@ -62,9 +62,9 @@ if (isset($_POST)) {
     
     
     if ($save) {
-      $_SESSION['successfully'] = "Login successfully.";
+      $_SESSION['successfully'] = "User created successfully.";
     }else {
-      $_SESSION['errors']['general'] = "Login unsuccessful";
+      $_SESSION['errors']['general'] = "User created unsuccessfully.";
       
     }
     

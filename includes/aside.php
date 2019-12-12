@@ -2,16 +2,40 @@
 <aside>
   
   <section class="login">
-    <h2>Login</h2>
-    <form method="post">
-      <label for="email-login">Email</label>
-      <input id="email-login" type="email" name="email-login">
-      <label for="password-login">Password</label>
-      <input id="password-login" type="password" name="password-login">
-      <input type="submit" value="Send">
-    </form>
+    <?php if (isset($_SESSION['user'])): ?>
+      <div class="login login-successfully">
+        <h2>Welcome <?php echo $_SESSION['user']['nombre'] ?> </h2>
+        <!--Buttons-->
+        <div class="buttons">
+          <a href="logout.php" class="btn btn-primary">Create Post</a>
+          <a href="logout.php" class="btn btn-secondary">Create Category</a>
+          <a href="logout.php" class="btn btn-forth">Edit Profile</a>
+          <a href="logout.php" class="btn btn-third">Logout</a>
+        </div>
+      </div>
+    <?php endif; ?>
+  
+  
+    <?php if (!isset($_SESSION['user'])): ?>
+    <div>
+      <h2>Login</h2>
+      <?php if (isset($_SESSION['error-login'])): ?>
+        <div class="alert alert-error">
+          <div><?php echo $_SESSION['error-login']; ?></div>
+        </div>
+      <?php endif; ?>
+      <form method="post" action="login.php">
+        <label for="email-login">Email</label>
+        <input id="email-login" type="email" name="email-login">
+        <label for="password-login">Password</label>
+        <input id="password-login" type="password" name="password-login">
+        <input type="submit" value="Send">
+      </form>
+    </div>
+    <?php endif; ?>
   </section>
   
+  <?php if (!isset($_SESSION['user'])): ?>
   <section class="register">
     <h2>Register</h2>
     <!-- Show errors -->
@@ -45,4 +69,5 @@
     </form>
     <?php deleteErrors(); ?>
   </section>
+  <?php endif; ?>
 </aside>

@@ -2,6 +2,34 @@
     box-sizing: border-box;
 }
 
+.btn {
+    display: block;
+    width: 100%;
+    background: gray;
+    color: white;
+    font-family: Helvetica, serif;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 10px;
+    margin: 5px 0;
+}
+
+.btn-primary {
+    background: #230A59;
+}
+
+.btn-secondary {
+    background: #5C73F2;
+}
+
+.btn-third {
+    background: #dc3545;
+}
+
+.btn-forth {
+    background: #333333;
+}
+
 body {
     background-image: url("../images/email-pattern.png");
 }

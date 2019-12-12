@@ -15,12 +15,7 @@ function deleteErrors () {
 
     $_SESSION['errors']['general'] = null;
     $_SESSION['successfully'] = null;
- 
   
-  
-  
-  
-  
-  session_unset();
+  unset($_SESSION['errors']);
   
 }
