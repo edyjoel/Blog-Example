@@ -1,5 +1,5 @@
-
 <?php include_once 'includes/connection.php'; ?>
+<?php require_once 'includes/helpers.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,10 +15,16 @@
 <header>
   <div class="container">
     <h1>Blog de Videojugos</h1>
+    <?php $categories = getCategories($db); ?>
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Categoria 1</a>
-      <a href="#">Categoria 2</a>
+      <?php
+        if (!empty($categories)) :
+        while($category = mysqli_fetch_assoc($categories)):
+        
+      ?>
+          <a href="categoria.php?id=<?php echo $category['id'];  ?>"><?php echo $category['nombre']; ?></a>
+      <?php endwhile;
+        endif; ?>
       <a href="#">Sobre mí</a>
       <a href="#">Contacto</a>
     </nav>

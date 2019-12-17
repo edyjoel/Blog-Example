@@ -1,25 +1,24 @@
 <?php include_once 'includes/header.php'; ?>
+<?php require_once 'includes/helpers.php'; ?>
+
 <div class="container">
   <section>
     <h2 class="ultimas">Últimas Entradas</h2>
-    <article>
-      <a href="#">
-        <h3>Título de mi entrada</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis, cum doloremque dolores ex facere, facilis, fugit molestias nesciunt quo sed velit. Accusantium culpa earum quibusdam quod saepe sed unde.</p>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <h3>Título de mi entrada</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis, cum doloremque dolores ex facere, facilis, fugit molestias nesciunt quo sed velit. Accusantium culpa earum quibusdam quod saepe sed unde.</p>
-      </a>
-    </article>
-    <article>
-      <a href="#">
-        <h3>Título de mi entrada</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corporis, cum doloremque dolores ex facere, facilis, fugit molestias nesciunt quo sed velit. Accusantium culpa earum quibusdam quod saepe sed unde.</p>
-      </a>
-    </article>
+    <?php
+     $lastPosts = getLastPosts($db);
+     if ($lastPosts):
+       while($post = mysqli_fetch_assoc($lastPosts)):
+     ?>
+         <article>
+           <a href="#">
+             <h3><?=$post['titulo'];?></h3>
+             <span class="date"><?=$post['categoria'] . ' | '.$post['fecha'];?></span>
+             <p><?=substr($post['descripcion'], 0, 180)."...";?></p>
+           </a>
+         </article>
+         
+    <?php endwhile; endif; ?>
+    
     <a href="#" class="all">All posts</a>
   </section>
   <?php require_once 'includes/aside.php'; ?>

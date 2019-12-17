@@ -1,4 +1,3 @@
-<?php require_once 'includes/helpers.php'; ?>
 <aside>
   
   <section class="login">
@@ -7,8 +6,8 @@
         <h2>Welcome <?php echo $_SESSION['user']['nombre'] ?> </h2>
         <!--Buttons-->
         <div class="buttons">
-          <a href="logout.php" class="btn btn-primary">Create Post</a>
-          <a href="logout.php" class="btn btn-secondary">Create Category</a>
+          <a href="create-post.php" class="btn btn-primary">Create Post</a>
+          <a href="create-category.php" class="btn btn-secondary">Create Category</a>
           <a href="logout.php" class="btn btn-forth">Edit Profile</a>
           <a href="logout.php" class="btn btn-third">Logout</a>
         </div>
