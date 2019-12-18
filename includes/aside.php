@@ -8,7 +8,7 @@
         <div class="buttons">
           <a href="create-post.php" class="btn btn-primary">Create Post</a>
           <a href="create-category.php" class="btn btn-secondary">Create Category</a>
-          <a href="logout.php" class="btn btn-forth">Edit Profile</a>
+          <a href="profile.php" class="btn btn-forth">Edit Profile</a>
           <a href="logout.php" class="btn btn-third">Logout</a>
         </div>
       </div>
