@@ -28,13 +28,25 @@
     
     
     if(count($errors) == 0) {
-      $sql = "INSERT INTO entradas VALUES(null, '$user', '$category', '$title', '$description', CURDATE());";
+      if ($_GET['editar']) {
+        $postId = $_GET['editar'];
+        $userId = $_SESSION['user']['id'];
+        $sql = "UPDATE entradas SET titulo='$title', descripcion='$description', categoria_id='$category' WHERE id= '$postId' AND usuario_id = '$userId'";
+      }else {
+        $sql = "INSERT INTO entradas VALUES(null, '$user', '$category', '$title', '$description', CURDATE());";
+      }
+      
       
       $save = mysqli_query($db, $sql);
       header("Location: index.php");
     }else {
       $_SESSION['errorsPost'] = $errors;
-      header("Location: create-post.php");
+      if ($_GET['editar']) {
+        header("Location: edit-post.php?id=".$_GET['editar']);
+      }else {
+        header("Location: create-post.php");
+      }
+      
     }
     
   }

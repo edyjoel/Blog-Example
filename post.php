@@ -13,9 +13,15 @@
     <a href="category.php?id=<?=$postCurrent['categoria_id']?>">
       <h3><?=$postCurrent['category'];?></h3>
     </a>
-    
-    <h4><?=$postCurrent['fecha'];?></h4>
+    <h4><?=$postCurrent['fecha'];?> | <?=$postCurrent['usuario'];?></h4>
     <p><?=$postCurrent['descripcion'];?></p>
+    
+    <?php if (isset($_SESSION['user']) && $_SESSION['user']['id'] == $postCurrent['usuario_id'] ): ?>
+
+      <a href="edit-post.php?id=<?=$postCurrent['id'];?>" class="btn btn-primary">Edit Post</a>
+      <a href="delete-post.php?id=<?=$postCurrent['id'];?>" class="btn btn-third">Delete post</a>
+    
+    <?php endif; ?>
   </section>
   <?php require_once 'includes/aside.php'; ?>
 </div>

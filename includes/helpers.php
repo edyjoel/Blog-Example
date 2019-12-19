@@ -68,7 +68,7 @@ function getLastPosts ($db, $limit = null, $category =  null) {
   }
   
   function getPost ($db, $id) {
-    $sql = "SELECT e.*, c.nombre AS 'category' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id WHERE e.id = '$id'";
+    $sql = "SELECT e.*, c.nombre AS 'category', CONCAT(u.nombre, ' ', u.apellidos) AS 'usuario' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id INNER JOIN usuarios u ON e.usuario_id = u.id WHERE e.id = '$id'";
     $post = mysqli_query($db, $sql);
     $result = array();
     if ($post && mysqli_num_rows($post) >= 1) {

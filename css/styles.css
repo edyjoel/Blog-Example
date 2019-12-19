@@ -50,6 +50,19 @@ h1 {
     margin-bottom: 10px;
 }
 
+h4, h3 {
+    color: #230A59;
+    font-family: Helvetica, serif;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
 p {
     color: #230A59;
     font-family: Helvetica, serif;
