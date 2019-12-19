@@ -5,12 +5,12 @@
   <section>
     <h2 class="ultimas">Últimas Entradas</h2>
     <?php
-     $lastPosts = getLastPosts($db);
+     $lastPosts = getLastPosts($db, true);
      if ($lastPosts):
        while($post = mysqli_fetch_assoc($lastPosts)):
      ?>
          <article>
-           <a href="#">
+           <a href="post.php?id=<?=$post['id']?>">
              <h3><?=$post['titulo'];?></h3>
              <span class="date"><?=$post['categoria'] . ' | '.$post['fecha'];?></span>
              <p><?=substr($post['descripcion'], 0, 180)."...";?></p>
@@ -19,7 +19,7 @@
          
     <?php endwhile; endif; ?>
     
-    <a href="#" class="all">All posts</a>
+    <a href="posts.php" class="all">All posts</a>
   </section>
   <?php require_once 'includes/aside.php'; ?>
 </div>

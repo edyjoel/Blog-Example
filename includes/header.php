@@ -22,7 +22,7 @@
         while($category = mysqli_fetch_assoc($categories)):
         
       ?>
-          <a href="categoria.php?id=<?php echo $category['id'];  ?>"><?php echo $category['nombre']; ?></a>
+          <a href="category.php?id=<?php echo $category['id'];  ?>"><?php echo $category['nombre']; ?></a>
       <?php endwhile;
         endif; ?>
       <a href="#">Sobre mí</a>
