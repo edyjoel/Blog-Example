@@ -32,18 +32,26 @@ function getCategories ($db) {
   return $result;
 }
 
-function getLastPosts ($db, $limit = null, $category =  null) {
+function getLastPosts ($db, $limit = null, $category =  null, $search = null) {
   $sql = "SELECT e.*, c.nombre AS 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id";
   
   if (!empty($category)) {
     $sql .= " WHERE e.categoria_id = $category";
   }
   
+  if (!empty($search)) {
+    $sql .= " WHERE e.titulo LIKE '%$search%'";
+  }
+  
   $sql .= " ORDER BY e.id DESC";
+  
+  
   
   if ($limit) {
     $sql .= " LIMIT 4";
   }
+  
+  
   
   $posts = mysqli_query($db, $sql);
   
@@ -77,3 +85,5 @@ function getLastPosts ($db, $limit = null, $category =  null) {
     
     return $result;
   }
+  
+  

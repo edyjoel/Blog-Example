@@ -1,5 +1,15 @@
 <aside>
   
+  <div>
+    <h2>Buscador</h2>
+    </form>
+    <form method="post" action="search.php">
+      <input type="search" name="search" placeholder="Search...">
+      <input type="submit" value="search">
+    </form>
+   
+  </div>
+  
   <section class="login">
     <?php if (isset($_SESSION['user'])): ?>
       <div class="login login-successfully">
